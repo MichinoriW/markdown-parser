@@ -36,4 +36,33 @@ public class MarkdownParseTest {
         expected.add("dooba.com");
         assertEquals(expected, arr);
     }
+
+    @Test
+    public void links2() throws IOException{
+        for(int i = 2; i < 9; i++){
+            ArrayList<String> arr = MarkdownParse.getLinks(Files.readString(Path.of("test-file"+i+".md")));
+            System.out.println(Files.readString(Path.of("test-file"+i+".md")));
+            ArrayList<String> expected = new ArrayList<String>();
+            switch(i){
+                case 2:
+                    expected.add("https://something.com");
+                    expected.add("some-page.html");
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+            }
+            assertEquals(expected, arr);
+            expected.clear();
+        }
+    }
 }
